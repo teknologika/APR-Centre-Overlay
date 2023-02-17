@@ -1,0 +1,21 @@
+{
+  "Category": "Rally",
+  "Title": "APR Centre Overlay",
+  "Description": "Informative and simple",
+  "Author": "Andreas Dahl Modified by Bruce McLeod",
+  "ScreenCount": 2.0,
+  "InGameScreensIndexs": [
+    1
+  ],
+  "IdleScreensIndexs": [
+    0
+  ],
+  "MainPreviewIndex": 1,
+  "IsOverlay": true,
+  "Width": 1280.0,
+  "Height": 175.0,
+  "OverlaySizeWarning": false,
+  "MetadataVersion": 2.0,
+  "EnableOnDashboardMessaging": true,
+  "PitScreensIndexs": []
+}

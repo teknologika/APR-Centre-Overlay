@@ -1,0 +1,196 @@
+{
+  "DashboardDebugManager": {
+    "Maximized": false
+  },
+  "Version": 2,
+  "Id": "84750da9-75f0-45bb-9554-ea2dd6a85854",
+  "BaseHeight": 101,
+  "BaseWidth": 410,
+  "BackgroundColor": "#FF000000",
+  "Screens": [
+    {
+      "Name": "Screen1",
+      "InGameScreen": true,
+      "IdleScreen": false,
+      "PitScreen": false,
+      "ScreenId": "f86dead6-246b-4256-aaab-63cda44b3bc7",
+      "IsForegroundLayer": false,
+      "IsBackgroundLayer": false,
+      "BackgroundColor": "#FF000000",
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "IsRectangleItem": true,
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderTop": 6,
+            "BorderBottom": 6,
+            "BorderRight": 6
+          },
+          "Height": 113.0,
+          "Left": 0.0,
+          "Top": -6.0,
+          "Visible": true,
+          "Width": 410.0,
+          "IsFreezed": true,
+          "Name": "RectangleItem0"
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "IsTextItem": true,
+          "Font": "Segoe UI",
+          "FontSize": 25.0,
+          "Text": "SOF 1320 IR +104",
+          "TextColor": "#FFFFFFFF",
+          "HorizontalAlignment": 1,
+          "VerticalAlignment": 0,
+          "TextMask": "0000000000",
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 101.0,
+          "Left": -23.0,
+          "Top": 10.0,
+          "Visible": true,
+          "Width": 279.0,
+          "Name": "Tag Time Remaining",
+          "RenderingSkip": 59,
+          "Bindings": {
+            "Text": {
+              "Formula": {
+                "Expression": "if (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Offline Testing', 'TEST SESSION',\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Warmup', 'WARMUP',\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Practice' and ([GameRawData.Telemetry.SessionState] =5 or [GameRawData.Telemetry.SessionState] =6)  , 'SESSION CLOSING',\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Practice', 'SOF ' + [DahlDesign.SoF],\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Race' and [GameRawData.Telemetry.SessionState] =2, 'GRID',\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Race' and ([GameRawData.Telemetry.SessionState] =4 || [GameRawData.Telemetry.SessionState] = 5) , 'SOF ' + [DahlDesign.SoF] + ' IR ' + format([DahlDesign.IRchange],1,1),\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Race' and ([DahlDesign.RaceFinished] or [GameRawData.Telemetry.SessionState] =6), 'FINISHED:' + ' IR ' + format([DahlDesign.IRchange],1,1),\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Lone Qualify', 'LONE QUALY',\r\nif (isnull([DataCorePlugin.GameData.NewData.SessionTypeName],'') = 'Open Qualify', 'OPEN QUALY',\r\nisnull([DataCorePlugin.GameData.NewData.SessionTypeName],''))))))))))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          }
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "IsTextItem": true,
+          "Font": "Segoe UI",
+          "FontSize": 40.0,
+          "Text": "00:00:38",
+          "TextColor": "#FFFFFFFF",
+          "HorizontalAlignment": 1,
+          "VerticalAlignment": 1,
+          "TextMask": "0000000000",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF808080",
+            "RadiusBottomRight": 10
+          },
+          "Height": 100.0,
+          "Left": -20.0,
+          "Top": 14.0,
+          "Visible": true,
+          "Width": 276.0,
+          "IsFreezed": true,
+          "Name": "Time Remaining Value",
+          "RenderingSkip": 5,
+          "Bindings": {
+            "Text": {
+              "FormatString": "hh\\:mm\\:ss",
+              "Formula": {
+                "Expression": "if(![DataCorePlugin.GameRunning],'--:--.---',(\r\n\r\nif(isnull([DataCorePlugin.CurrentGame],0)=='IRacing'\r\n,\r\n(\r\nif(\r\n(isnull([DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain],0)<>604800),\r\nsecondstotimespan(isnull([DataCorePlugin.GameRawData.Telemetry.SessionTimeRemain],0)),'∞')\r\n)\r\n,isnull([DataCorePlugin.GameData.NewData.SessionTimeLeft],0))\r\n))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Text"
+            }
+          }
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
+          "IsRectangleItem": true,
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderTop": 6,
+            "BorderBottom": 6,
+            "BorderLeft": 6,
+            "BorderRight": 6
+          },
+          "Height": 63.0,
+          "Left": 242.0,
+          "Top": 21.0,
+          "Visible": true,
+          "Width": 4.0,
+          "Name": "RectangleItem1"
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.BuiltIn.TimeText, SimHub.Plugins",
+          "Format": "HH:mm",
+          "TextBeforeValue": "",
+          "IsTextItem": true,
+          "Font": "Segoe UI",
+          "FontSize": 40.0,
+          "TextColor": "#FFFFFFFF",
+          "HorizontalAlignment": 1,
+          "VerticalAlignment": 1,
+          "TextMask": "0000000000",
+          "BackgroundColor": "#00FFFFFF",
+          "BorderStyle": {
+            "BorderColor": "#FF808080",
+            "RadiusTopRight": 10,
+            "RadiusBottomRight": 10
+          },
+          "Height": 100.0,
+          "Left": 253.0,
+          "Top": 14.0,
+          "Visible": true,
+          "Width": 150.0,
+          "Name": "IRL Time",
+          "RenderingSkip": 59
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "IsTextItem": true,
+          "Font": "Segoe UI",
+          "FontSize": 25.0,
+          "Text": "TIME",
+          "TextColor": "#FFFFFFFF",
+          "HorizontalAlignment": 1,
+          "VerticalAlignment": 0,
+          "TextMask": "0000000000",
+          "BackgroundColor": "#00FFFFFF",
+          "Height": 100.0,
+          "Left": 255.0,
+          "Top": 10.0,
+          "Visible": true,
+          "Width": 150.0,
+          "IsFreezed": true,
+          "Name": "Tag IRL Time",
+          "RenderingSkip": 59
+        }
+      ]
+    }
+  ],
+  "SnapToGrid": false,
+  "HideLabels": false,
+  "ShowForeground": true,
+  "ForegroundOpacity": 50.0,
+  "ShowBackground": true,
+  "BackgroundOpacity": 50.0,
+  "ShowBoundingRectangles": false,
+  "GridSize": 10,
+  "Images": [],
+  "Metadata": {
+    "Title": "Time",
+    "ScreenCount": 1.0,
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IdleScreensIndexs": [],
+    "MainPreviewIndex": 0,
+    "IsOverlay": false,
+    "ShowInTaskBar": true,
+    "Width": 410.0,
+    "Height": 101.0,
+    "OverlaySizeWarning": false,
+    "MetadataVersion": 2.0,
+    "EnableOnDashboardMessaging": true,
+    "PitScreensIndexs": []
+  },
+  "ShowOnScreenControls": true,
+  "ShowInTaskBar": true,
+  "IsOverlay": false,
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true
+}
