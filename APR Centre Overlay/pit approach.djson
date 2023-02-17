@@ -1,1 +1,161 @@
-{"DashboardDebugManager":{"LastPlacement":"-1868,1132,1280,100","Maximized":false},"Version":2,"Id":"0f106d70-19a5-4f8f-819a-c85b38a97296","BaseHeight":100,"BaseWidth":1280,"BackgroundColor":"#FF000000","Screens":[{"Name":"Screen1","InGameScreen":true,"IdleScreen":false,"PitScreen":false,"ScreenId":"ea5110a6-1058-4640-b17e-5097246983f6","AllowOverlays":true,"IsForegroundLayer":false,"IsOverlayLayer":false,"OverlayTriggerExpression":{"Expression":""},"ScreenEnabledExpression":{"Expression":""},"OverlayMaxDuration":0,"OverlayMinDuration":0,"IsBackgroundLayer":false,"BackgroundColor":"#00FFFFFF","Items":[{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins","IsLinearGauge":true,"GaugeOrientation":0,"GaugeAlignment":0,"AutoSize":false,"GaugeColor":"#FF00BFFF","AlternateGaugeColor":"#FF008000","UseAlternateStyle":false,"Minimum":0.0,"Maximum":100.0,"Value":20.0,"Steps":0.0,"PAW":256.0,"BackgroundColor":"#FFFFFFFF","Height":100.0,"Left":0.0,"Top":0.0,"Visible":true,"Width":1280.0,"Name":"LinearGaugeItem0","Bindings":{"Maximum":{"Formula":{"Expression":"[MaxSpeedKmh]"},"Mode":2,"TargetPropertyName":"Maximum"},"Minimum":{"Formula":{"Expression":"left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2)"},"Mode":2,"TargetPropertyName":"Minimum"},"GaugeColor":{"Formula":{"Expression":"if([IsInPitLane]=1 and round([SpeedKmh],0)-2.5>left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'red',if(round([SpeedKmh],0)-2.5<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'deepskyblue','deepskyblue'))"},"Mode":2,"TargetPropertyName":"GaugeColor"},"BackgroundColor":{"Formula":{"Expression":"if([IsInPitLane]=1 and round([SpeedKmh],0)-2.5>left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'white',if(round([SpeedKmh],0)-2.5<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'deepskyblue','white'))"},"Mode":2,"TargetPropertyName":"BackgroundColor"},"Value":{"Formula":{"Expression":"[SpeedLocal]"},"Mode":2,"TargetPropertyName":"Value"}}},{"$type":"SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins","IsTextItem":true,"Font":"Segoe UI","FontWeight":"Bold","FontSize":100.0,"Text":"LIM REACHED","TextColor":"#FFFFFFFF","HorizontalAlignment":1,"VerticalAlignment":1,"BackgroundColor":"#FF000000","Height":106.0,"Left":0.0,"Top":-5.0,"Visible":false,"Width":1280.0,"Name":"lim reached","Bindings":{"Visible":{"Formula":{"Expression":"round([SpeedKmh],0)-1<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2) \r\nand ([PitLimiterOn]=1 or ([PitLimiterOn]=0 && [DahlDesign.PitEntry])) \r\nand [StintOdo]>1000\r\n"},"Mode":2,"TargetPropertyName":"Visible"}}}]}],"SnapToGrid":false,"HideLabels":true,"ShowForeground":true,"ForegroundOpacity":100.0,"ShowBackground":true,"BackgroundOpacity":100.0,"ShowBoundingRectangles":false,"GridSize":10,"Images":[],"Metadata":{"ScreenCount":1.0,"InGameScreensIndexs":[0],"IdleScreensIndexs":[],"MainPreviewIndex":0,"IsOverlay":false,"Width":1280.0,"Height":100.0,"OverlaySizeWarning":false,"MetadataVersion":2.0,"EnableOnDashboardMessaging":true,"PitScreensIndexs":[]},"ShowOnScreenControls":true,"IsOverlay":false,"EnableClickThroughOverlay":true,"EnableOnDashboardMessaging":true}
+{
+  "DashboardDebugManager": {
+    "LastPlacement": "-1868,1132,1280,100",
+    "Maximized": false
+  },
+  "Version": 2,
+  "Id": "9799f524-a406-4ed1-b0b0-e38a0834e758",
+  "BaseHeight": 100,
+  "BaseWidth": 1280,
+  "BackgroundColor": "#FF000000",
+  "Screens": [
+    {
+      "Name": "Screen1",
+      "InGameScreen": true,
+      "IdleScreen": false,
+      "PitScreen": false,
+      "ScreenId": "ea5110a6-1058-4640-b17e-5097246983f6",
+      "AllowOverlays": true,
+      "IsForegroundLayer": false,
+      "IsOverlayLayer": false,
+      "OverlayTriggerExpression": {
+        "Expression": ""
+      },
+      "ScreenEnabledExpression": {
+        "Expression": ""
+      },
+      "OverlayMaxDuration": 0,
+      "OverlayMinDuration": 0,
+      "IsBackgroundLayer": false,
+      "BackgroundColor": "#00FFFFFF",
+      "Items": [
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.LinearGaugeItem, SimHub.Plugins",
+          "IsLinearGauge": true,
+          "GaugeOrientation": 0,
+          "GaugeAlignment": 0,
+          "AutoSize": false,
+          "GaugeColor": "#FF00BFFF",
+          "AlternateGaugeColor": "#FF008000",
+          "UseAlternateStyle": false,
+          "Minimum": 0.0,
+          "Maximum": 100.0,
+          "Value": 20.0,
+          "Steps": 0.0,
+          "PAW": 256.0,
+          "BackgroundColor": "#FFFFFFFF",
+          "BorderStyle": {
+            "RadiusTopLeft": 20,
+            "RadiusTopRight": 20,
+            "RadiusBottomLeft": 20,
+            "RadiusBottomRight": 20
+          },
+          "Height": 100.0,
+          "Left": 0.0,
+          "Top": 0.0,
+          "Visible": true,
+          "Width": 1280.0,
+          "Name": "LinearGaugeItem0",
+          "Bindings": {
+            "Maximum": {
+              "Formula": {
+                "Expression": "[MaxSpeedKmh]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Maximum"
+            },
+            "Minimum": {
+              "Formula": {
+                "Expression": "left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2)"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Minimum"
+            },
+            "GaugeColor": {
+              "Formula": {
+                "Expression": "if([IsInPitLane]=1 and round([SpeedKmh],0)-2.5>left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'red',if(round([SpeedKmh],0)-2.5<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'deepskyblue','deepskyblue'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "GaugeColor"
+            },
+            "BackgroundColor": {
+              "Formula": {
+                "Expression": "if([IsInPitLane]=1 and round([SpeedKmh],0)-2.5>left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'white',if(round([SpeedKmh],0)-2.5<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2),'deepskyblue','white'))"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "BackgroundColor"
+            },
+            "Value": {
+              "Formula": {
+                "Expression": "[SpeedLocal]"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Value"
+            }
+          }
+        },
+        {
+          "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+          "IsTextItem": true,
+          "Font": "Segoe UI",
+          "FontWeight": "Bold",
+          "FontSize": 100.0,
+          "Text": "LIM REACHED",
+          "TextColor": "#FFFFFFFF",
+          "HorizontalAlignment": 1,
+          "VerticalAlignment": 1,
+          "BackgroundColor": "#FF000000",
+          "BorderStyle": {
+            "RadiusTopLeft": 20,
+            "RadiusTopRight": 20,
+            "RadiusBottomLeft": 20,
+            "RadiusBottomRight": 20
+          },
+          "Height": 106.0,
+          "Left": 0.0,
+          "Top": -5.0,
+          "Visible": false,
+          "Width": 1280.0,
+          "Name": "lim reached",
+          "Bindings": {
+            "Visible": {
+              "Formula": {
+                "Expression": "round([SpeedKmh],0)-1<left([GameRawData.SessionData.WeekendInfo.TrackPitSpeedLimit],0,2) \r\nand ([PitLimiterOn]=1 or ([PitLimiterOn]=0 && [DahlDesign.PitEntry])) \r\nand [StintOdo]>1000\r\n"
+              },
+              "Mode": 2,
+              "TargetPropertyName": "Visible"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "SnapToGrid": false,
+  "HideLabels": true,
+  "ShowForeground": true,
+  "ForegroundOpacity": 100.0,
+  "ShowBackground": true,
+  "BackgroundOpacity": 100.0,
+  "ShowBoundingRectangles": false,
+  "GridSize": 10,
+  "Images": [],
+  "Metadata": {
+    "ScreenCount": 1.0,
+    "InGameScreensIndexs": [
+      0
+    ],
+    "IdleScreensIndexs": [],
+    "MainPreviewIndex": 0,
+    "IsOverlay": false,
+    "Width": 1280.0,
+    "Height": 100.0,
+    "OverlaySizeWarning": false,
+    "MetadataVersion": 2.0,
+    "EnableOnDashboardMessaging": true,
+    "PitScreensIndexs": []
+  },
+  "ShowOnScreenControls": true,
+  "IsOverlay": false,
+  "EnableClickThroughOverlay": true,
+  "EnableOnDashboardMessaging": true
+}

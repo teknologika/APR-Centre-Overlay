@@ -4314,12 +4314,6 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FFFF4500",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4905,7 +4899,7 @@
                 }
               ],
               "Group": false,
-              "Visible": false,
+              "Visible": true,
               "Name": "FLAGS"
             },
             {

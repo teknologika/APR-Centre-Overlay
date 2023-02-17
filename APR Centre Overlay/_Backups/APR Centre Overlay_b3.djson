@@ -4,7 +4,7 @@
     "Maximized": false
   },
   "Version": 2,
-  "Id": "7e9148e7-2340-473a-a733-3760c68fdaf0",
+  "Id": "d67b1cd4-f47f-43ee-82e8-d64384e2d762",
   "BaseHeight": 175,
   "BaseWidth": 1280,
   "BackgroundColor": "#FF000000",
@@ -2234,7 +2234,7 @@
                 }
               ],
               "Group": true,
-              "Visible": false,
+              "Visible": true,
               "Name": "ARB - Front",
               "Bindings": {
                 "Visible": {
@@ -2681,7 +2681,7 @@
                 }
               ],
               "Group": true,
-              "Visible": false,
+              "Visible": true,
               "Name": "ARB - Rear",
               "Bindings": {
                 "Visible": {
@@ -4299,7 +4299,7 @@
           "Top": -7.0,
           "Left": 0.0,
           "Height": 107.0,
-          "Width": 1282.0,
+          "Width": 1300.0,
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
@@ -4314,12 +4314,6 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FFFF4500",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4423,9 +4417,28 @@
               "Top": 0.0,
               "Left": 0.0,
               "Height": 100.0,
-              "Width": 1282.0,
+              "Width": 1300.0,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "IsTextItem": true,
+                  "Font": "Segoe UI",
+                  "FontWeight": "Bold",
+                  "FontSize": 80.0,
+                  "Text": "PIT RESET",
+                  "TextColor": "#FF000000",
+                  "HorizontalAlignment": 1,
+                  "VerticalAlignment": 0,
+                  "TextMask": "0000000000",
+                  "BackgroundColor": "#FFFFFF00",
+                  "Height": 100.0,
+                  "Left": 0.0,
+                  "Top": 0.0,
+                  "Visible": false,
+                  "Width": 1300.0,
+                  "Name": "Pit Reset"
+                },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "IsTextItem": true,
@@ -4438,17 +4451,11 @@
                   "VerticalAlignment": 0,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1280.0,
+                  "Width": 1300.0,
                   "Name": "Engine Off",
                   "Bindings": {
                     "Visible": {
@@ -4480,11 +4487,7 @@
                   "BackgroundColor": "#FFFF00FF",
                   "BorderStyle": {
                     "BorderColor": "#00FFFFFF",
-                    "BorderBottom": 6,
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
+                    "BorderBottom": 6
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4527,12 +4530,6 @@
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#FFFFFF00",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4575,12 +4572,6 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FF6A5ACD",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4616,12 +4607,6 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4657,17 +4642,11 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1280.0,
+                  "Width": 1300.0,
                   "Name": "SLOW DOWN - YIELD TIME",
                   "Bindings": {
                     "Visible": {
@@ -4691,12 +4670,6 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 99.0,
                   "Left": 2.0,
                   "Top": 0.0,
@@ -4718,11 +4691,7 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FF7CFC00",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000",
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
+                    "BorderColor": "#FFFF0000"
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4754,17 +4723,11 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1280.0,
+                  "Width": 1300.0,
                   "Name": "BLACK - invalid lap",
                   "Bindings": {
                     "Visible": {
@@ -4788,17 +4751,11 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1280.0,
+                  "Width": 1300.0,
                   "Name": "PIT FOR REPAIRS",
                   "Bindings": {
                     "Visible": {
@@ -4815,11 +4772,7 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FFFFFF00",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000",
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
+                    "BorderColor": "#FFFF0000"
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4844,11 +4797,7 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FF00BFFF",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000",
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
+                    "BorderColor": "#FFFF0000"
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4881,17 +4830,11 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
-                  "BorderStyle": {
-                    "RadiusTopLeft": 20,
-                    "RadiusTopRight": 20,
-                    "RadiusBottomLeft": 20,
-                    "RadiusBottomRight": 20
-                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1280.0,
+                  "Width": 1300.0,
                   "Name": "BOX THIS LAP",
                   "Bindings": {
                     "Visible": {
@@ -4905,7 +4848,7 @@
                 }
               ],
               "Group": false,
-              "Visible": false,
+              "Visible": true,
               "Name": "FLAGS"
             },
             {
