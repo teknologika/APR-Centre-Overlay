@@ -4,7 +4,7 @@
     "Maximized": false
   },
   "Version": 2,
-  "Id": "aacc6184-cfe7-4932-94c5-73dd10eced96",
+  "Id": "7e9148e7-2340-473a-a733-3760c68fdaf0",
   "BaseHeight": 175,
   "BaseWidth": 1280,
   "BackgroundColor": "#FF000000",
@@ -1097,17 +1097,17 @@
         },
         {
           "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-          "Top": -9.0,
+          "Top": 0.0,
           "Left": 0.0,
-          "Height": 209.0,
+          "Height": 200.0,
           "Width": 1280.0,
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
-              "Top": -9.0,
+              "Top": 0.0,
               "Left": 0.0,
-              "Height": 184.0,
+              "Height": 175.0,
               "Width": 1280.0,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
@@ -1116,10 +1116,6 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FF000000",
                   "BorderStyle": {
-                    "BorderTop": 2,
-                    "BorderBottom": 2,
-                    "BorderLeft": 2,
-                    "BorderRight": 2,
                     "RadiusTopLeft": 20,
                     "RadiusTopRight": 20,
                     "RadiusBottomLeft": 20,
@@ -1188,10 +1184,17 @@
                   "Bindings": {
                     "Text": {
                       "Formula": {
-                        "Expression": "if ([APRDashPlugin.BrakeBiasColour]=='green','Setup',if ([APRDashPlugin.BrakeBiasColour]='deepskyblue','Preferred',''))\r\n"
+                        "Expression": "if ([APRDashPlugin.BrakeBiasColour]=='Green','Setup',if ([APRDashPlugin.BrakeBiasColour]='DeepSkyBlue','Preferred',''))\r\n"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.BrakeBiasColour]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
                     }
                   }
                 },
@@ -1211,7 +1214,16 @@
                   "Top": 42.0,
                   "Visible": true,
                   "Width": 400.0,
-                  "Name": "Label"
+                  "Name": "Label",
+                  "Bindings": {
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.BrakeBiasColour]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  }
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1775,7 +1787,7 @@
                 }
               ],
               "Group": false,
-              "Visible": true,
+              "Visible": false,
               "Name": "BrakeBias",
               "Bindings": {
                 "Visible": {
@@ -1791,21 +1803,21 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "Top": 0.0,
               "Left": 0.0,
-              "Height": 200.0,
+              "Height": 175.0,
               "Width": 1280.0,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "IsRectangleItem": true,
-                  "BackgroundColor": "#FFFFFFFF",
+                  "BackgroundColor": "#FF000000",
                   "BorderStyle": {
-                    "BorderTop": 2,
-                    "BorderBottom": 2,
-                    "BorderLeft": 2,
-                    "BorderRight": 2
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
-                  "Height": 200.0,
+                  "Height": 175.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": true,
@@ -1819,7 +1831,7 @@
                   "FontWeight": "SemiBold",
                   "FontSize": 140.0,
                   "Text": "6",
-                  "TextColor": "#FF00BFFF",
+                  "TextColor": "#FFFFFFFF",
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
@@ -1840,8 +1852,7 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Interpreter": 1,
-                        "Expression": "if ($prop('GameRawData.Telemetry.dcAntiRollFront') == $prop('DataCorePlugin.GameRawData.SessionData.CarSetup.Chassis.Front.ArbBladeSetting')) {\r\n\treturn 'black';\r\n}\r\nelse {\r\n return 'DeepSkyBlue';\r\n}\r\n\r\n"
+                        "Expression": "[APRDashPlugin.ARBColourFront]"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -1855,16 +1866,59 @@
                   "FontWeight": "SemiBold",
                   "FontSize": 72.0,
                   "Text": "FRONT ARB",
-                  "TextColor": "#FF000000",
+                  "TextColor": "#FFFFFFFF",
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
                   "Height": 100.0,
                   "Left": 30.0,
-                  "Top": 37.0,
+                  "Top": 42.0,
                   "Visible": true,
                   "Width": 400.0,
-                  "Name": "TextItem0"
+                  "Name": "TextItem0",
+                  "Bindings": {
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.ARBColourFront]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  }
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "IsTextItem": true,
+                  "Font": "Segoe UI",
+                  "FontWeight": "SemiBold",
+                  "FontSize": 52.0,
+                  "Text": "Setup",
+                  "TextColor": "#FFFFFFFF",
+                  "HorizontalAlignment": 1,
+                  "VerticalAlignment": 1,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 56.0,
+                  "Left": 30.0,
+                  "Top": 7.0,
+                  "Visible": true,
+                  "Width": 400.0,
+                  "Name": "Label",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "if ([APRDashPlugin.ARBColourFront]=='Green','Setup','')\r\n"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.ARBColourFront]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  }
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -1879,7 +1933,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1897,7 +1950,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1915,7 +1967,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1933,7 +1984,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1951,7 +2001,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1969,7 +2018,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -1987,7 +2035,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2005,7 +2052,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2023,7 +2069,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2041,7 +2086,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2059,7 +2103,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2077,7 +2120,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2100,7 +2142,7 @@
                       "TextColor": "#FF00BFFF",
                       "HorizontalAlignment": 1,
                       "VerticalAlignment": 1,
-                      "BackgroundColor": "#FFFFFFFF",
+                      "BackgroundColor": "#00FFFFFF",
                       "Height": 34.0,
                       "Left": 880.0,
                       "Top": 30.0,
@@ -2191,7 +2233,7 @@
                   "Name": "Indicator"
                 }
               ],
-              "Group": false,
+              "Group": true,
               "Visible": false,
               "Name": "ARB - Front",
               "Bindings": {
@@ -2208,21 +2250,21 @@
               "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
               "Top": 0.0,
               "Left": 0.0,
-              "Height": 200.0,
+              "Height": 175.0,
               "Width": 1280.0,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "IsRectangleItem": true,
-                  "BackgroundColor": "#FFFFFFFF",
+                  "BackgroundColor": "#FF000000",
                   "BorderStyle": {
-                    "BorderTop": 2,
-                    "BorderBottom": 2,
-                    "BorderLeft": 2,
-                    "BorderRight": 2
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
-                  "Height": 200.0,
+                  "Height": 175.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": true,
@@ -2236,7 +2278,7 @@
                   "FontWeight": "SemiBold",
                   "FontSize": 140.0,
                   "Text": "6",
-                  "TextColor": "#FF00BFFF",
+                  "TextColor": "#FFFFFFFF",
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
@@ -2245,7 +2287,7 @@
                   "Top": 0.0,
                   "Visible": true,
                   "Width": 400.0,
-                  "Name": "ARB VALUE",
+                  "Name": "TextItem0",
                   "Bindings": {
                     "Text": {
                       "FormatString": "0",
@@ -2257,8 +2299,7 @@
                     },
                     "TextColor": {
                       "Formula": {
-                        "Interpreter": 1,
-                        "Expression": "if ($prop('GameRawData.Telemetry.dcAntiRollRear') == $prop('DataCorePlugin.GameRawData.SessionData.CarSetup.Chassis.Rear.ArbBladeSetting')) {\r\n\treturn 'black';\r\n}\r\nelse {\r\n return 'DeepSkyBlue';\r\n}\r\n\r\n"
+                        "Expression": "[APRDashPlugin.ARBColourRear]"
                       },
                       "Mode": 2,
                       "TargetPropertyName": "TextColor"
@@ -2272,16 +2313,59 @@
                   "FontWeight": "SemiBold",
                   "FontSize": 72.0,
                   "Text": "REAR ARB",
-                  "TextColor": "#FF000000",
+                  "TextColor": "#FFFFFFFF",
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#00FFFFFF",
                   "Height": 100.0,
                   "Left": 30.0,
-                  "Top": 37.0,
+                  "Top": 42.0,
                   "Visible": true,
                   "Width": 400.0,
-                  "Name": "TextItem0"
+                  "Name": "TextItem0",
+                  "Bindings": {
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.ARBColourRear]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  }
+                },
+                {
+                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
+                  "IsTextItem": true,
+                  "Font": "Segoe UI",
+                  "FontWeight": "SemiBold",
+                  "FontSize": 52.0,
+                  "Text": "Setup",
+                  "TextColor": "#FFFFFFFF",
+                  "HorizontalAlignment": 1,
+                  "VerticalAlignment": 1,
+                  "BackgroundColor": "#00FFFFFF",
+                  "Height": 56.0,
+                  "Left": 30.0,
+                  "Top": 7.0,
+                  "Visible": true,
+                  "Width": 400.0,
+                  "Name": "Label",
+                  "Bindings": {
+                    "Text": {
+                      "Formula": {
+                        "Expression": "if ([APRDashPlugin.ARBColourRear]=='Green','Setup','')\r\n"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "Text"
+                    },
+                    "TextColor": {
+                      "Formula": {
+                        "Expression": "[APRDashPlugin.ARBColourRear]"
+                      },
+                      "Mode": 2,
+                      "TargetPropertyName": "TextColor"
+                    }
+                  }
                 },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.Layer, SimHub.Plugins",
@@ -2296,7 +2380,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2314,7 +2397,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2332,7 +2414,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2350,7 +2431,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2368,7 +2448,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2386,7 +2465,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2404,7 +2482,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2422,7 +2499,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2440,7 +2516,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2458,7 +2533,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2476,7 +2550,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2494,7 +2567,6 @@
                       "IsRectangleItem": true,
                       "BackgroundColor": "#00FFFFFF",
                       "BorderStyle": {
-                        "BorderColor": "#FF000000",
                         "BorderTop": 2,
                         "BorderBottom": 2,
                         "BorderLeft": 2,
@@ -2517,7 +2589,7 @@
                       "TextColor": "#FF00BFFF",
                       "HorizontalAlignment": 1,
                       "VerticalAlignment": 1,
-                      "BackgroundColor": "#FFFFFFFF",
+                      "BackgroundColor": "#00FFFFFF",
                       "Height": 34.0,
                       "Left": 880.0,
                       "Top": 30.0,
@@ -2608,7 +2680,7 @@
                   "Name": "Indicator"
                 }
               ],
-              "Group": false,
+              "Group": true,
               "Visible": false,
               "Name": "ARB - Rear",
               "Bindings": {
@@ -4227,7 +4299,7 @@
           "Top": -7.0,
           "Left": 0.0,
           "Height": 107.0,
-          "Width": 1300.0,
+          "Width": 1282.0,
           "BackgroundColor": "#00FFFFFF",
           "Childrens": [
             {
@@ -4242,6 +4314,12 @@
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.RectangleItem, SimHub.Plugins",
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FFFF4500",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4326,7 +4404,7 @@
                 }
               ],
               "Group": false,
-              "Visible": false,
+              "Visible": true,
               "BlinkDelay": 500.0,
               "BlinkEnabled": true,
               "Name": "INCIDENT",
@@ -4345,28 +4423,9 @@
               "Top": 0.0,
               "Left": 0.0,
               "Height": 100.0,
-              "Width": 1300.0,
+              "Width": 1282.0,
               "BackgroundColor": "#00FFFFFF",
               "Childrens": [
-                {
-                  "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
-                  "IsTextItem": true,
-                  "Font": "Segoe UI",
-                  "FontWeight": "Bold",
-                  "FontSize": 80.0,
-                  "Text": "PIT RESET",
-                  "TextColor": "#FF000000",
-                  "HorizontalAlignment": 1,
-                  "VerticalAlignment": 0,
-                  "TextMask": "0000000000",
-                  "BackgroundColor": "#FFFFFF00",
-                  "Height": 100.0,
-                  "Left": 0.0,
-                  "Top": 0.0,
-                  "Visible": false,
-                  "Width": 1300.0,
-                  "Name": "Pit Reset"
-                },
                 {
                   "$type": "SimHub.Plugins.OutputPlugins.GraphicalDash.Models.TextItem, SimHub.Plugins",
                   "IsTextItem": true,
@@ -4379,11 +4438,17 @@
                   "VerticalAlignment": 0,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1300.0,
+                  "Width": 1280.0,
                   "Name": "Engine Off",
                   "Bindings": {
                     "Visible": {
@@ -4415,7 +4480,11 @@
                   "BackgroundColor": "#FFFF00FF",
                   "BorderStyle": {
                     "BorderColor": "#00FFFFFF",
-                    "BorderBottom": 6
+                    "BorderBottom": 6,
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4458,6 +4527,12 @@
                   "HorizontalAlignment": 1,
                   "VerticalAlignment": 1,
                   "BackgroundColor": "#FFFFFF00",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4500,6 +4575,12 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FF6A5ACD",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4535,6 +4616,12 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
@@ -4570,11 +4657,17 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1300.0,
+                  "Width": 1280.0,
                   "Name": "SLOW DOWN - YIELD TIME",
                   "Bindings": {
                     "Visible": {
@@ -4598,6 +4691,12 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 99.0,
                   "Left": 2.0,
                   "Top": 0.0,
@@ -4619,7 +4718,11 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FF7CFC00",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000"
+                    "BorderColor": "#FFFF0000",
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4651,11 +4754,17 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFF0000",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1300.0,
+                  "Width": 1280.0,
                   "Name": "BLACK - invalid lap",
                   "Bindings": {
                     "Visible": {
@@ -4679,11 +4788,17 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1300.0,
+                  "Width": 1280.0,
                   "Name": "PIT FOR REPAIRS",
                   "Bindings": {
                     "Visible": {
@@ -4700,7 +4815,11 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FFFFFF00",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000"
+                    "BorderColor": "#FFFF0000",
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4725,7 +4844,11 @@
                   "IsRectangleItem": true,
                   "BackgroundColor": "#FF00BFFF",
                   "BorderStyle": {
-                    "BorderColor": "#FFFF0000"
+                    "BorderColor": "#FFFF0000",
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
                   },
                   "Height": 100.0,
                   "Left": 0.0,
@@ -4758,11 +4881,17 @@
                   "VerticalAlignment": 1,
                   "TextMask": "0000000000",
                   "BackgroundColor": "#FFFFFF00",
+                  "BorderStyle": {
+                    "RadiusTopLeft": 20,
+                    "RadiusTopRight": 20,
+                    "RadiusBottomLeft": 20,
+                    "RadiusBottomRight": 20
+                  },
                   "Height": 100.0,
                   "Left": 0.0,
                   "Top": 0.0,
                   "Visible": false,
-                  "Width": 1300.0,
+                  "Width": 1280.0,
                   "Name": "BOX THIS LAP",
                   "Bindings": {
                     "Visible": {
